@@ -1,0 +1,54 @@
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(33ch, 1fr));
+    gap: 2em;
+    border-radius: 40px;
+}
+.card_text {
+  margin-top: 30px;
+  text-align: center;
+}
+.card {
+  margin-top: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+.card:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+form{
+    margin: 20px 20px 20px 20px;
+    max-width: 1000px;
+    align-self: center;    
+}
+.login_button{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+.form{
+    max-width: 500px;
+    min-width: 400px;
+    align-self: center;    
+}
+.reg_link{
+    text-decoration: underline;
+}
+
+.lead:link{
+  text-decoration: none;
+  color: black;
+}
+
+.lead:visited {
+  text-decoration: none;
+}
+
+.lead:hover {
+  text-decoration: none;
+}
+
+.lead:active {
+  text-decoration: none;
+}

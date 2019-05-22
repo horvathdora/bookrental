@@ -1,0 +1,135 @@
+
+Könyvek és Olvasók:
+- login.html: login form
+- registration.html: 
+- index.html: kezdőoldal
+- books.html: könyvek listája (view, rent)
+- mybooks.html: olvasó könyveinek listája (edit, modify, del)
+- rentals.html: 
+
+routes:
+    - /                         bejelentkező felület, ha be van jelentkezve a felhasználó, akkor a kezdőlap
+    - /login                    bejelentkező felület
+    - /register                 regisztrációs felület
+	
+	- /books					könyvek listázása
+	- /books/view/:id			könyv megtekintése
+	- /books/rent
+	
+	- /mybooks					felhasználó könyveinek listázása
+	- /mybooks/view/:id			könyv megtekintése
+	
+	- /rentals					felhasználó kölcsönzéseinek listázása
+	- /rentals/return/:id			Kölcsönzés visszaadása
+	
+middlewarek:
+
+general:
+    authMW
+    checkUserMW
+	renderMW
+	logoutMW
+	mainRedirectMW
+	
+	
+books:
+	getBooksListMW
+	getBookMW
+	rentBookMW
+	
+mybooks:
+	getMybooksListMW
+	getMybookMW
+	deleteMybookMW
+	modifyMybookMW
+	
+rentals:
+	getRentalsListMW
+	getRentalMW
+	returnRentalMW
+	
+readers:
+	getReadersListMW
+	getReaderMW
+	
+general
+
+	GET , POST /
+		checkUserMW
+		renderMW
+
+    GET , POST /login
+        checkUserLoginMW
+        renderMW	
+	
+	GET, POST /register
+        addUserMW
+        renderMW
+
+    GET, POST /forgotpass
+        sendUserPassMW
+        renderMW
+	
+books
+
+	GET /books
+		authMW
+		getBooksListMW
+		renderMW
+		
+	GET /books/view/:id
+		authMW
+		getBookMW
+		renderMW
+	
+	GET , POST /books/rent
+		authMW
+		getBooksListMW
+		rentBookMW
+		renderMW
+	
+rentals
+		
+	GET /rentals
+		authMW
+		getRentalsListMW
+		renderMW
+		
+	GET , POST /rentals/return/:id
+		authMW
+		returnRentalMW
+		renderMW
+		
+mybooks
+
+	GET /mybooks
+		authMW
+		getMybooksListMW
+		renderMW
+		
+	GET /mybooks/view/:id
+		authMW
+		getMybookMW
+		renderMW
+	
+	GET , POST /mybooks/del/:id
+		authMW
+		deleteMybookMW
+		renderMW
+		
+	GET , POST /mybooks/mod/:id
+		authMW
+		modifyMybookMW
+		renderMW
+
+readers
+
+	GET /readers
+		authMW
+		getReadersListMW
+		renderMW
+		
+	GET /readers/view/:id
+		authMW
+		getReaderMW
+		renderMW

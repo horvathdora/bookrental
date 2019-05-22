@@ -1,0 +1,67 @@
+<% include header %>
+<link rel="stylesheet" href="/books.css"/>
+<link rel="stylesheet" href="/viewbook.css"/>
+<link
+        href="https://fonts.googleapis.com/css?family=Poppins"
+        rel="stylesheet"
+/>
+</head>
+
+<% include navbar %>
+
+<div class="container">
+    <div class="card">
+        <div class="card_text">
+            <h2>"Könyv címe"</h2>
+            <p class="lead">
+                Rövid ismertető a könyvről.
+            </p>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Könyv címe</label>
+                <input
+                        readonly
+                        class="form-control-plaintext"
+                        id="exampleFormControlInput1"
+                        placeholder="<%= data.book.title %>"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Szerző</label>
+                <input
+                        class="form-control-plaintext"
+                        id="exampleFormControlInput1"
+                        placeholder="<%= data.book.author %>*"
+                />
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Kiadás éve</label>
+                <input
+                        class="form-control-plaintext"
+                        id="exampleFormControlInput1"
+                        placeholder="<%= data.book.year %>"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Rövid leírás</label>
+                <textarea
+                        class="form-control-plaintext"
+                        id="exampleFormControlTextarea1"
+                        rows="3"
+                        placeholder="<%= data.book.description %>"
+                ></textarea>
+            </div>
+            <div class="add_button">
+                <a href="/books" class="btn btn-primary" type="submit">
+                    Vissza
+                </a>
+                <small id="smallText" class="form-text text-muted"
+                >Vissza a könyvekhez.
+                </small
+                >
+            </div>
+        </form>
+<% include footer %>

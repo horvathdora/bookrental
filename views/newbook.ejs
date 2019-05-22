@@ -1,0 +1,73 @@
+<% include header %>
+    <link rel="stylesheet" href="newbook.css" />
+    <link rel="stylesheet" href="books.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+  </head>
+  
+  <% include navbar %>
+
+    <div class="container">
+      <div class="card">
+        <div class="card_text">
+          <h2>Új könyv hozzáadása</h2>
+          <p class="lead">
+            Könyvtáradat bővítenéd? Itt megteheted.
+          </p>
+        </div>
+
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Könyv címe</label>
+            <input
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="cím"
+              name="title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Szerző</label>
+            <input
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="szerző neve"
+              name="author"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Kiadás éve</label>
+            <input
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="kiadás éve"
+              name="year"
+              type="number"
+            />
+          </div>
+          
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Rövid leírás</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              placeholder="Rövid leírás"
+              name="description"
+            ></textarea>
+          </div>
+
+          <div class="add_button">
+            <button  class="btn btn-primary" type="submit">
+              Hozzáadás
+            </button>
+
+            <small id="smallText" class="form-text text-muted"
+            >Mielőtt hozzáadnád kérlek ellenőrizd, hogy helyesen adtad-e meg az adatokat.</small
+            >
+          </div>
+        </form>
+
+        <% include footer %>

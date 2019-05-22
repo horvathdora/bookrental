@@ -1,0 +1,35 @@
+nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  display: grid;
+}
+div {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  float: left;
+
+}
+
+li {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-family: 'Courier New';
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 20px;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));
+  margin-top: 100px;
+  padding: 30px 30px;
+}
+

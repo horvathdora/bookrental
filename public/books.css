@@ -1,0 +1,89 @@
+.container {
+  display: block;
+}
+.card {
+  padding: 20px;
+  margin-top: 46px;
+  background: white;
+  border-radius: 16px;
+}
+.table-responsive-sm {
+  align-self: center;
+}
+.table {
+  margin-top: 20px;
+  margin-right: 20px;
+  min-width: 500px;
+  align-self: center;
+}
+tbody {
+  text-align: center;
+  table-layout: auto;
+}
+thead {
+  font: calibri;
+  font-size: 17px;
+  text-align: center;
+  background-color: #60c0c0;
+  color: black;
+}
+
+.back {
+  font-weight: lighter;
+  color: #3c7e5d;
+  font-family: poppins;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+.back:link {
+  text-decoration: none;
+  color: #4ca14d;
+}
+
+.back:visited {
+  text-decoration: none;
+}
+
+.back:hover {
+  text-decoration: none;
+  color: #4ca14d;
+}
+
+.back:active {
+  text-decoration: none;
+  color: #a14c76;
+}
+
+
+.new{
+  font: bold;
+  font-size: 18px;
+  max-width: 250px;
+  min-width: 250px;
+  float: right;
+  margin-right: 50px;
+}
+
+.new:link,
+.new:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid #6b2539;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.new:hover,
+.new:active {
+  background-color: #6b2539;
+  color: white;
+}
+
+.card-body{
+  float: none;
+}
+
+

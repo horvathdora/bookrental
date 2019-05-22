@@ -1,0 +1,45 @@
+<% include header %>
+<link rel="stylesheet" href="books.css"/>
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+</head>
+
+<% include navbar %>
+
+<!--Az egészet egy card-ba lehetne rakni-->
+<div class="container">
+    <div class="card">
+        <div class="table-responsive-md">
+            <table class="table table-striped">
+                <caption>
+                    Könyvek listája
+                </caption>
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Cím</th>
+                    <th scope="col">Szerző</th>
+                    <th scope="col">Könyv megtekintése</th>
+                    <th scope="col">Kölcsönözhető</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <% data.books.forEach(function (book) { %>
+                    <tr>
+                        <th scope="row"><%= book.ind %></th>
+                        <td><%= book.title %></td>
+                        <td><%= book.author %></td>
+                        <td>
+                            <a href="/books/view/<%= book._id %>" class="back">megtekintés</a>
+                        </td>
+                        <td>
+                            <a href="#" class="back">kikölcsönzöm</a> <!-- TODO -->
+                        </td>
+                    </tr>
+                <% }); %>
+
+                </tbody>
+            </table>
+        </div>
+<% include footer %>

@@ -1,0 +1,78 @@
+<% include header %>
+    <link rel="stylesheet" href="books.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+  </head>
+  
+  <% include navbar %>
+
+    <!--Az egészet egy card-ba lehetne rakni-->
+    <div class="container">
+      <div class="card-body" style="height: 40px">
+        <a class="new" href="/books/newbook">Új könyv hozzáadása</a>
+      </div>
+      <div class="card">
+        <div class="table-responsive-md">
+          <table class="table table-striped">
+            <caption>
+              Saját könyveid
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Cím</th>
+                <th scope="col">Szerző</th>
+                <th scope="col">Megtekintés</th>
+                <th scope="col">Módosítás</th>
+                <th scope="col">Törlés</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Így lettem</td>
+                <td>Michelle Obama</td>
+                <td>
+                  <a href="/books/view" class="back">megtekintés</a>
+                </td>
+                <td>
+                  <a href="#" class="back">módosítás</a>
+                </td>
+                <td>
+                  <a href="#" class="back">törlés</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Hazugságvizsgáló</td>
+                <td>JDr. David J. Lieberman</td>
+                <td>
+                  <a href="/books/view" class="back">megtekintés</a>
+                </td>
+                <td>
+                  <a href="#" class="back">módosítás</a>
+                </td>
+                <td>
+                  <a href="#" class="back">törlés</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Harry Potter és a bölcsek köve</td>
+                <td>Joanne Kathleen Rowling</td>
+                <td>
+                  <a href="/books/view" class="back">megtekintés</a>
+                </td>
+                <td>
+                  <a href="#" class="back">módosítás</a>
+                </td>
+                <td>
+                  <a href="#" class="back">törlés</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <% include footer %>

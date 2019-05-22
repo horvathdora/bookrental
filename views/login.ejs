@@ -1,0 +1,67 @@
+<% include header %>
+
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-light" style="background-color: #7ac0c0;">
+      <a class="navbar-brand" href="/login">Book rental</a>
+      <div class="navbar-expand">
+        <ul class="navbar-nav mr-auto mt-10 mt-lg-10">
+          <li class="nav-item active">
+            <a class="nav-link" href="/login"
+              >Bejelentkezés <span class="sr-only">(current)</span></a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="card">
+        <div class="card_text">
+          <h2>Bejelentkezés</h2>
+          <p class="lead">
+            Üdvözöllek Olvasó!
+          </p>
+        </div>
+        <div class="form">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email-cím</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                name="email"
+                placeholder="Email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Jelszó</label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                name="password"
+                placeholder="Jelszó"
+              />
+              <a href="#" class="form-text" id="reg">
+                  Elfelejtett jelszó?
+              </a>
+            </div>
+            <div class="login_button">
+              <button class="btn btn-primary" type="submit">
+                Bejelentkezés
+              </button>
+              <small id="smallText" class="form-text text-muted"
+                >Még nem vagy tag?</small
+              >
+              <div class="reg_link">
+                <a href="/register" class="lead" id="reg">
+                  REGISZTRÁCIÓ
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+        <% include footer %>

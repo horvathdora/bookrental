@@ -1,0 +1,67 @@
+<% include header %>
+    <link rel="stylesheet" href="books.css" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    
+  </head>
+  
+  <% include navbar %>
+
+    <!--Az egészet egy card-ba lehetne rakni-->
+    <div class="container">
+      <div class="card">
+        <div class="table-responsive-md">
+          <table class="table table-striped">
+            <caption>
+              Kölcsönvett könyvek listája
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Cím</th>
+                <th scope="col">Szerző</th>
+                <th scope="col">Kikölcsönözve</th>
+                <th scope="col">Visszaadás</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Így lettem</td>
+                <td>Michelle Obama</td>
+                <td>2018.12.12</td>
+                <td>
+                  <a href="#" class="back">visszaadom</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Így lettem</td>
+                <td>Michelle Obama</td>
+                <td>2017.07.24</td>
+                <td>
+                  <a href="#" class="back">visszaadom</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Így lettem</td>
+                <td>Michelle Obama</td>
+                <td>2019.01.08</td>
+                <td>
+                  <a href="#" class="back">visszaadom</a>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Így lettem</td>
+                <td>Michelle Obama</td>
+                <td>2018.12.12</td>
+                <td>
+                  <a href="#" class="back">visszaadom</a>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        <% include footer %>

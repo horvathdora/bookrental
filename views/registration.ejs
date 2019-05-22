@@ -1,0 +1,74 @@
+<% include header %>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+      <nav class="navbar navbar-light" style="background-color: #7ac0c0;">
+          <a class="navbar-brand" href="/register">Book rental</a>
+          <div class="navbar-expand">
+            <ul class="navbar-nav mr-auto mt-10 mt-lg-10">
+              <li class="nav-item active">
+                <a class="nav-link" href="/login"
+                  >Bejelentkezés <span class="sr-only">(current)</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+    <div class="container">
+      <div class="card">
+        <div class="card_text">
+          <h2>Regisztráció</h2>
+          <p class="lead">
+            Itt lehet regisztrálni a könyvklubba.
+          </p>
+        </div>
+        <div class="form">
+          <form>
+            <div class="form-group">
+              <label for="veznev">Vezetéknév</label>
+              <input
+                type="text"
+                class="form-control"
+                id="veznev"
+                placeholder="Vezetéknév"
+                name = "lname"
+              />
+            </div>
+            <div class="form-group">
+              <label for="veznev">Keresztnév</label>
+              <input
+                type="text"
+                class="form-control"
+                id="kernev"
+                placeholder="Keresztnév"
+                name = "fname"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email-cím</label>
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                placeholder="Email"
+                name="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Jelszó</label>
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                placeholder="Jelszó"
+                name="password"
+              />
+            </div>
+            <div class="login_button">
+              <button class="btn btn-primary" type="submit">Regisztrálok</button>
+            </div>
+          </form>
+        </div>
+
+        <% include footer %>

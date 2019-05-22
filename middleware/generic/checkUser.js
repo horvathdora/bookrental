@@ -30,6 +30,7 @@ module.exports = function (objectrepository) {
                 }
                 if(result.password === req.query.password) {
                     req.session.userid = result.id;
+
                     return res.redirect('/rent/list');
                 }
                 else {

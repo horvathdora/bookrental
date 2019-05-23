@@ -8,6 +8,8 @@ const requireOption = require('../common');
 module.exports = function (objectrepository, viewName) {
 
     return function (req, res, next) {
-        res.render(viewName, {data: res.local});
+        if(typeof res.local === "undefined")
+            res.local = {};
+        res.render(viewName, {data: res.local, userid: req.session.userid});
     };
 };

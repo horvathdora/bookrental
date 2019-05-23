@@ -6,6 +6,11 @@
 module.exports = function (objectrepository) {
 
     return function (req, res, next) {
-        return res.redirect('/landing');//meg kell majd vizsgálni, hogy be van-e jelentkezve a felhasználó
+        if(typeof req.session.userid !== "undefined") {
+            return res.redirect('/landing');
+        }
+        else{
+            return res.redirect('/login');
+        }
     };
 };

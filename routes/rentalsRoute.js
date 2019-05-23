@@ -2,7 +2,7 @@ const renderMW = require('../middleware/generic/render');
 const authMW = require('../middleware/generic/auth');
 
 const getRentalsListMW = require('../middleware/rentals/getRentalsList');
-const getRentalMW = require('../middleware/rentals/getRentals');
+const getBookMW = require('../middleware/books/getBook');
 const returnRentalMW = require('../middleware/rentals/returnRental');
 
 const bookModel = require('../models/book');
@@ -19,16 +19,16 @@ module.exports = function (app) {
     };
 
     /** lists the users rentals */
-    app.get('/rentals/:userid',
+    app.get('/rentals',
         authMW(objRepo),
         getRentalsListMW(objRepo),
         renderMW(objRepo, 'rentals')
         );
 
     /** returns a rented book*/
-    app.use('/rentals/:userid/return/:rentalid',
+    app.use('/rentals/return/:bookid',
         authMW(objRepo),
-        getRentalMW(objRepo),
+        getBookMW(objRepo),
         returnRentalMW(objRepo),
         renderMW(objRepo, 'rentals')
     );

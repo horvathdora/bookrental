@@ -20,14 +20,14 @@ module.exports = function(app){
     };
 
     /** lists the user's own books*/
-    app.get('/mybooks/:userid',
+    app.get('/mybooks',
         authMW(objRepo),
         getMybooksListMW(objRepo),
         renderMW(objRepo, 'mybooks')
     );
 
     /** shows one book*/
-    app.get('mybooks/:userid/view/:bookid',
+    app.get('mybooks/view/:bookid',
         authMW(objRepo),
         getBookMW(objRepo),
         renderMW(objRepo, 'viewbook')
@@ -36,17 +36,17 @@ module.exports = function(app){
     /** deletes a book
      * then redirects to /mybooks/:userid
     */
-    app.use('/mybooks/:userid/del/:bookid',
+    app.use('/mybooks/del/:bookid',
         authMW(objRepo),
         getBookMW(objRepo),
         deleteMybookMW(objRepo),
         function (req, res, next){
-            return res.redirect('mybooks');
+            return res.redirect('/mybooks');
         }
     );
 
     /** modifies a book*/
-    app.use('/mybooks/:userid/mod/:bookid',
+    app.use('/mybooks/mod/:bookid',
         authMW(objRepo),
         getBookMW(objRepo),
         modifyMybookMW(objRepo),

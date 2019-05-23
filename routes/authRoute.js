@@ -25,7 +25,10 @@ module.exports = function (app) {
     );
 
     app.get('/logout',
-        logoutMW(objRepo)
+        logoutMW(objRepo),
+        function (req, res, next) {
+            return res.redirect('/');
+        }
     );
 
     app.use('/register',

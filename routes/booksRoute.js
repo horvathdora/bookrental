@@ -34,7 +34,7 @@ module.exports = function (app) {
     );
 
     /** user rents a book*/
-    app.use('/books/rent',
+    app.use('/books/rent/:bookid',
         authMW(objRepo),
         getBookMW(objRepo),
         rentBookMW(objRepo),

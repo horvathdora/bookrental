@@ -3,14 +3,6 @@ const app = express();
 const session = require('express-session');
 const bodyParser = require('body-parser');
 
-//route-ok fájljai
-
-require('./routes/booksRoute')(app);
-require('./routes/mybooksRoute')(app);
-require('./routes/readersRoute')(app);
-require('./routes/rentalsRoute')(app);
-require('./routes/authRoute')(app);
-
 app.set('view engine', 'ejs');
 
 app.use(session({
@@ -28,6 +20,14 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.use(express.static('public'));
+
+//route-ok fájljai
+
+require('./routes/booksRoute')(app);
+require('./routes/mybooksRoute')(app);
+require('./routes/readersRoute')(app);
+require('./routes/rentalsRoute')(app);
+require('./routes/authRoute')(app);
 
 const server = app.listen(3000, function () {
 	console.log("listening on 3000");

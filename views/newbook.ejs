@@ -1,73 +1,96 @@
 <% include header %>
-    <link rel="stylesheet" href="newbook.css" />
-    <link rel="stylesheet" href="books.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins"
-      rel="stylesheet"
-    />
-  </head>
-  
-  <% include navbar %>
+<link rel="stylesheet" href="/newbook.css"/>
+<link rel="stylesheet" href="/books.css"/>
+<link
+        href="https://fonts.googleapis.com/css?family=Poppins"
+        rel="stylesheet"
+/>
+</head>
 
-    <div class="container">
-      <div class="card">
+<% include navbar %>
+
+<div class="container">
+    <div class="card">
         <div class="card_text">
-          <h2>Új könyv hozzáadása</h2>
-          <p class="lead">
-            Könyvtáradat bővítenéd? Itt megteheted.
-          </p>
+            <% if(typeof data.book === "undefined") { %>
+                <h2>Új könyv hozzáadása</h2>
+                <p class="lead">
+                    Könyvtáradat bővítenéd? Itt megteheted.
+                </p>
+            <% } else { %>
+                <h2>Könyv szerkesztése</h2>
+            <% } %>
         </div>
 
         <form>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Könyv címe</label>
-            <input
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="cím"
-              name="title"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Szerző</label>
-            <input
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="szerző neve"
-              name="author"
-            />
-          </div>
-          <div class="form-group">
-            <label for="exampleFormControlInput1">Kiadás éve</label>
-            <input
-              class="form-control"
-              id="exampleFormControlInput1"
-              placeholder="kiadás éve"
-              name="year"
-              type="number"
-            />
-          </div>
-          
-          <div class="form-group">
-            <label for="exampleFormControlTextarea1">Rövid leírás</label>
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="3"
-              placeholder="Rövid leírás"
-              name="description"
-            ></textarea>
-          </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Könyv címe</label>
+                <input
+                        class="form-control"
+                        id="exampleFormControlInput1"
+                <% if(typeof data.book === "undefined") { %>
+                        placeholder="Cím"
+                <% } else { %>
+                        value="<%= data.book.title %>"
+                        <% } %>
+                        name="title"
+                />
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Szerző</label>
+                <input
+                        class="form-control"
+                        id="exampleFormControlInput1"
+                <% if(typeof data.book === "undefined") { %>
+                        placeholder="Szerző"
+                <% } else { %>
+                        value="<%= data.book.author %>"
+                        <% } %>
+                        name="author"
+                />
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Kiadás éve</label>
+                <input
+                        class="form-control"
+                        id="exampleFormControlInput1"
+                <% if(typeof data.book === "undefined") { %>
+                        placeholder="Kiadás éve"
+                <% } else { %>
+                        value="<%= data.book.year %>"
+                        <% } %>
+                        name="year"
+                        type="number"
+                />
+            </div>
 
-          <div class="add_button">
-            <button  class="btn btn-primary" type="submit">
-              Hozzáadás
-            </button>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Rövid leírás</label>
+                <textarea
+                        class="form-control"
+                        id="exampleFormControlTextarea1"
+                        rows="3"
+                <% if(typeof data.book === "undefined") { %>
+                        placeholder="Rövid leírás"
+                <% } %>
+                        name="description"
+                ><%if(typeof data.book !== "undefined") {%> <%= data.book.description %> <%}%></textarea>
+            </div>
 
-            <small id="smallText" class="form-text text-muted"
-            >Mielőtt hozzáadnád kérlek ellenőrizd, hogy helyesen adtad-e meg az adatokat.</small
-            >
-          </div>
+            <div class="add_button">
+                <button class="btn btn-primary" type="submit">
+                    <% if (typeof data.book === "undefined") { %>
+                        Hozzáadás
+                    <% } else { %>
+                        Szerkesztés
+                    <% } %>
+                </button>
+
+                <small id="smallText" class="form-text text-muted"
+                >Mielőtt hozzáadnád kérlek ellenőrizd, hogy helyesen adtad-e meg az adatokat.
+                </small
+                >
+            </div>
         </form>
 
-        <% include footer %>
+<% include footer %>

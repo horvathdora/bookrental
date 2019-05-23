@@ -1,5 +1,5 @@
 <% include header %>
-<link rel="stylesheet" href="books.css"/>
+<link rel="stylesheet" href="/books.css"/>
 <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
 </head>
@@ -25,19 +25,22 @@
                 </thead>
 
                 <tbody>
-                <% data.books.forEach(function (book) { %>
-                    <tr>
-                        <th scope="row"><%= book.ind %></th>
-                        <td><%= book.title %></td>
-                        <td><%= book.author %></td>
-                        <td>
-                            <a href="/books/view/<%= book._id %>" class="back">megtekintés</a>
-                        </td>
-                        <td>
-                            <a href="#" class="back">kikölcsönzöm</a> <!-- TODO -->
-                        </td>
-                    </tr>
-                <% }); %>
+                <%
+                var i = 1;
+                data.books.forEach(function (book) {
+                    if((typeof book.rentedBy === "undefined" || book.rentedBy === null) && userid !== book.owner) {%>
+                        <tr>
+                            <th scope="row"><%= i++ %></th>
+                            <td><%= book.title %></td>
+                            <td><%= book.author %></td>
+                            <td>
+                                <a href="/books/view/<%= book._id %>" class="back">megtekintés</a>
+                            </td>
+                            <td>
+                                <a href="/books/rent/<%= book._id %>" class="back">kikölcsönzöm</a>
+                            </td>
+                        </tr>
+                <% } }); %>
 
                 </tbody>
             </table>

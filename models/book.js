@@ -5,7 +5,10 @@ var Book = db.model('Book', {
   title: String,
   author: String,
   year: Number,
-  description: String
+  description: String,
+  owner: String,
+  rentedBy: String,
+  rentedDate: String
 });
 
 module.exports = Book; 

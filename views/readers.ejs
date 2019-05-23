@@ -1,43 +1,40 @@
 <% include header %>
-    <link rel="stylesheet" href="books.css" />
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-  
-  </head>
-  
-  <% include navbar %>
-  
-    <!--Az egészet egy card-ba lehetne rakni-->
-    <div class="container">
-      <div class="card">
+<link rel="stylesheet" href="/books.css"/>
+<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+</head>
+
+<% include navbar %>
+
+<!--Az egészet egy card-ba lehetne rakni-->
+<div class="container">
+    <div class="card">
         <div class="table-responsive-md">
-          <table class="table table-striped">
-            <caption>
-              Olvasók listája
-            </caption>
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col" >Olvasó</th>
-                <th scope="col">Könyveinek száma</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Bor Virág</td>
-                <td>22</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Pálinkás Tea</td>
-                <td>7</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Nagy Boldizsár</td>
-                <td>1</td>
-              </tr>
-            </tbody>
-          </table>
+            <table class="table table-striped">
+                <caption>
+                    Olvasók listája
+                </caption>
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Olvasó</th>
+                    <th scope="col">Könyveinek száma</th>
+                </tr>
+                </thead>
+                <tbody>
+                <%
+                var i = 1;
+                data.users.forEach(function (reader) {
+                %>
+                    <tr>
+                        <th scope="row">
+                            <%= i++; %>
+                        </th>
+                        <td><%= reader.lname %> <%= reader.fname %></td>
+                        <td><%= reader.books %></td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
         </div>
-        <% include footer %>
+<% include footer %>

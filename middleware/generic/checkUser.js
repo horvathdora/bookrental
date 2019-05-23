@@ -20,23 +20,18 @@ module.exports = function (objectrepository) {
         userModel.findOne(
             {email: req.query.email},
             function (err, result) {
-                if(err || !result) {
-                    console.log("email not in database");
-                    if(req.query.email !== "")
+                if (err || !result) {
+                    if (req.query.email !== "")
                         res.local.error = "Nincs ilyen email cím az adatbázisban, regisztráld be!";
                     else
                         res.local.error = "Nem adtál meg email címet!";
                     return next();
                 }
-                if(result.password === req.query.password) {
+                if (result.password === req.query.password) {
                     req.session.userid = result.id;
-
-
-                    return res.redirect('/rent/list');
-                }
-                else {
-                    console.log("Wrong password :(");
-                    if(req.query.password === "")
+                    return res.redirect('/landing');
+                } else {
+                    if (req.query.password === "")
                         res.local.error = "Nem adtál meg jelszót!";
                     else
                         res.local.error = "Hibás jelszó!";

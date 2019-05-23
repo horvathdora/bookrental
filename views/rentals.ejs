@@ -1,5 +1,5 @@
 <% include header %>
-    <link rel="stylesheet" href="books.css" />
+    <link rel="stylesheet" href="/books.css" />
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     
   </head>
@@ -24,42 +24,17 @@
               </tr>
             </thead>
             <tbody>
+            <% data.books.forEach(function (book) { %>
               <tr>
-                <th scope="row">1</th>
-                <td>Így lettem</td>
-                <td>Michelle Obama</td>
-                <td>2018.12.12</td>
+                <th scope="row"><%= book.ind %></th>
+                <td><%= book.title %></td>
+                <td><%= book.author %></td>
+                <td><%= book.rentedDate %></td>
                 <td>
-                  <a href="#" class="back">visszaadom</a>
+                  <a href="/rentals/return/<%=book._id%>" class="back">visszaadom</a>
                 </td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Így lettem</td>
-                <td>Michelle Obama</td>
-                <td>2017.07.24</td>
-                <td>
-                  <a href="#" class="back">visszaadom</a>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Így lettem</td>
-                <td>Michelle Obama</td>
-                <td>2019.01.08</td>
-                <td>
-                  <a href="#" class="back">visszaadom</a>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">4</th>
-                <td>Így lettem</td>
-                <td>Michelle Obama</td>
-                <td>2018.12.12</td>
-                <td>
-                  <a href="#" class="back">visszaadom</a>
-                </td>
-              </tr>
+            <% }); %>
               
             </tbody>
           </table>

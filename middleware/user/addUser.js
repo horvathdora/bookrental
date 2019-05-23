@@ -29,6 +29,7 @@ module.exports = function (objectrepository) {
                         newUser.fname = req.query.fname;
                         newUser.email = req.query.email;
                         newUser.password = req.query.password;
+                        newUser.books = 0;
 
                         newUser.save(function(err) {
                             if(err)

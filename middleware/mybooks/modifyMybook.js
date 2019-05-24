@@ -10,13 +10,15 @@ module.exports = function (objectrepository) {
             (typeof req.query.author === 'undefined') || req.query.author === '') {
             return next();
         } else {
-            res.local.book.title = req.query.title;
-            res.local.book.author = req.query.author;
-            res.local.book.year = req.query.year;
-            res.local.book.description = req.query.description;
-            res.local.book.owner = req.session.userid;
+            var book = res.local.book;
 
-            res.local.book.save(function (err) {
+            book.title = req.query.title;
+            book.author = req.query.author;
+            book.year = req.query.year;
+            book.description = req.query.description;
+            book.owner = req.session.userid;
+
+            book.save(function (err) {
                 return res.redirect("/mybooks");
             })
         }

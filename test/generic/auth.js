@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var authMW = require('../../middleware/generic/auth');
 
-describe('auth middleware', function() {
+describe('auth MW', function() {
     it('should call next if userid exists', function (done) {
         var reqMock = {
             session: {
@@ -25,7 +25,7 @@ describe('auth middleware', function() {
             }
         };
         authMW({})(reqMock,resMock,function () {
-            expect('next should be not called').to.be.eql(true);
+            expect('next should be not called').to.be.eql(false);
         });
     });
 });

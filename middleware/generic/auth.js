@@ -8,8 +8,7 @@ module.exports = function (objectrepository) {
     return function (req, res, next) {
         if(typeof req.session.userid !== "undefined") {
             return next();
-        }
-        else{
+        } else{
             return res.redirect('/login');
         }
     };

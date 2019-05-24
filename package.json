@@ -9,6 +9,7 @@
   "author": "",
   "license": "Beerware",
   "dependencies": {
+    "chai": "^4.2.0",
     "dateformat": "^3.0.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",

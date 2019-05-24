@@ -7,9 +7,9 @@ module.exports = function (objectrepository) {
 
     return function (req, res, next) {
         if ((typeof req.query.title === 'undefined') || req.query.title === '' ||
-            (typeof req.query.author === 'undefined') || req.query.author === '')
+            (typeof req.query.author === 'undefined') || req.query.author === '') {
             return next();
-        else {
+        } else {
             res.local.book.title = req.query.title;
             res.local.book.author = req.query.author;
             res.local.book.year = req.query.year;
